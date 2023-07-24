@@ -1,0 +1,33 @@
+[user]
+	email = dillon.fearns@postcodelottery.co.uk
+	name = Dillon Fearns
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	whitespace = trailing-space,space-before-tab
+[apply]
+	whitespace = fix
+[credential]
+	helper = osxkeychain
+[fetch]
+	prune = true
+[help]
+	autocorrect = 30
+[rerere]
+	enabled = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	default = current
+	followTags = true
+[alias]
+    mvbranch = "!moveit() { git branch -m $1 $2; git push origin :$1; git push --set-upstream origin $2; }; moveit"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[init]
+	defaultBranch = main
